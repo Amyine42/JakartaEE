@@ -116,8 +116,8 @@ public class Bb implements Serializable {
             facesContext.addMessage(null, message);
             return null;
         }
-        // Entourer la réponse avec "||".
-        this.reponse = "||";
+        // Entourer la réponse avec "..".
+        this.reponse = "..";
         // Si la conversation n'a pas encore commencé, ajouter le rôle système au début de la réponse
         if (this.conversation.isEmpty()) {
             // Ajouter le rôle système au début de la réponse
@@ -125,7 +125,7 @@ public class Bb implements Serializable {
             // Invalide le bouton pour changer le rôle système
             this.systemRoleChangeable = false;
         }
-        this.reponse += question.toLowerCase(Locale.FRENCH) + "||";
+        this.reponse += question.toUpperCase(Locale.FRENCH) + "..";
         // La conversation contient l'historique des questions-réponses depuis le début.
         afficherConversation();
         return null;
